@@ -1,12 +1,13 @@
-const data : 
-    {
+export type EVData = {
         vehicle_id: string,
         distance_traveled: number,
         charging_time: number,
         average_speed: number,
         region: string,
         date: string
-    }[]
+    }
+
+const EV_DATA: EVData[]
  = [
     {"vehicle_id": "EV001", "distance_traveled": 95, "charging_time": 4.5, "average_speed": 45, "region": "North", "date": "2024-10-05"},
     {"vehicle_id": "EV001", "distance_traveled": 110, "charging_time": 4.7, "average_speed": 47, "region": "North", "date": "2024-10-12"},
@@ -54,3 +55,5 @@ const data :
     {"vehicle_id": "EV004", "distance_traveled": 235, "charging_time": 4.0, "average_speed": 87, "region": "South", "date": "2024-12-07"},
     {"vehicle_id": "EV005", "distance_traveled": 114, "charging_time": 1.8, "average_speed": 57, "region": "North", "date": "2024-12-08"},
 ]
+
+export default EV_DATA;
