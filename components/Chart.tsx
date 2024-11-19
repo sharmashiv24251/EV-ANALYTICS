@@ -10,7 +10,12 @@ const Chart = ({ type, filter }: { type: ChartType; filter?: Filters }) => {
   if (type === "scatter") {
     return <ScatterPlot data={filteredData} />;
   } else if (type === "heatmap") {
-    return <Heatmap data={filteredData} />;
+    return (
+      <div className="scale-[70%] translate-y-[-100px]">
+        {/* this div is tempporary */}
+        <Heatmap data={filteredData} />
+      </div>
+    );
   } else if (type === "parallel") {
     return <Parallel data={filteredData} />;
   }

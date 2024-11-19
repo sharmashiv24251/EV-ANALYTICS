@@ -25,10 +25,12 @@ const FilterComponent = ({
 }: {
   setFilters: React.Dispatch<React.SetStateAction<Filters>>;
 }) => {
+  //for ui
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [vehicleId, setVehicleId] = useState<string>("all");
   const [region, setRegion] = useState<string>("all");
 
+  //for passing filters
   const handleFilterChange = (name: string, value: string) => {
     setFilters((prevFilters) => ({
       ...prevFilters,

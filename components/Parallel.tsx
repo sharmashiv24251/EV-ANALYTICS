@@ -3,7 +3,7 @@ import React from "react";
 
 const Parallel = ({ data }: { data?: EVData[] }) => {
   return (
-    <div>
+    <div className="h-[200px] overflow-y-scroll">
       {data?.map((ev) => (
         <div key={crypto.randomUUID()} className="flex gap-2">
           <h1>{ev.vehicle_id}</h1>
