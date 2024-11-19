@@ -1,12 +1,4 @@
-export type EVData = {
-        vehicle_id: string,
-        distance_traveled: number,
-        charging_time: number,
-        average_speed: number,
-        region: string,
-        date: string
-    }
-
+import { EVData } from "./types";
 const EV_DATA: EVData[]
  = [
     {"vehicle_id": "EV001", "distance_traveled": 95, "charging_time": 4.5, "average_speed": 45, "region": "North", "date": "2024-10-05"},

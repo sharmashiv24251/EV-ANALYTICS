@@ -2,6 +2,7 @@ import React from "react";
 import EV_DATA from "@/data";
 import HomeDataCard from "@/components/HomeDataCard";
 import { calculateTotalDistance } from "@/lib/utils";
+import HomeChartCard from "@/components/HomeChartCard";
 const Page = () => {
   const totalDistance = calculateTotalDistance(EV_DATA);
   return (
@@ -16,13 +17,13 @@ const Page = () => {
         </div>
 
         <div className="grid-item col-span-2 row-span-2 lg:col-span-3 lg:col-start-2 lg:row-span-4 lg:row-start-1">
-          3
+          <HomeChartCard title="Parallel Coordinates" type="parallel" />
         </div>
         <div className="grid-item col-span-2 row-span-2 row-start-4 lg:col-span-2 lg:row-span-5 lg:row-start-5">
-          4
+          <HomeChartCard title="Scatter Plot" type="scatter" />
         </div>
         <div className="grid-item col-span-2 row-span-2 row-start-6 h-96 lg:col-span-2 lg:col-start-3 lg:row-span-5 lg:row-start-5 lg:h-auto">
-          5
+          <HomeChartCard title="Heatmap" type="heatmap" />
         </div>
       </div>
     </div>

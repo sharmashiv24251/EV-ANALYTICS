@@ -13,14 +13,17 @@ const Nav = () => {
   const links = [
     { href: "/", icon: <House size={ICON_SIZE} color={ICON_COLOR} /> },
     {
-      href: "/scatter",
+      href: "/chart/scatter",
       icon: <ChartScatter size={ICON_SIZE} color={ICON_COLOR} />,
     },
     {
-      href: "/parallel",
+      href: "/chart/parallel",
       icon: <Columns3 size={ICON_SIZE} color={ICON_COLOR} />,
     },
-    { href: "/heatmap", icon: <Grid3x3 size={ICON_SIZE} color={ICON_COLOR} /> },
+    {
+      href: "/chart/heatmap",
+      icon: <Grid3x3 size={ICON_SIZE} color={ICON_COLOR} />,
+    },
   ];
 
   return (
