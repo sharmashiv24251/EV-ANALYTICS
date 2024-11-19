@@ -1,4 +1,5 @@
-import { EVData } from '@/data';
+
+import { EVData } from '@/types';
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 

@@ -1,4 +1,4 @@
-import { EVData, Filters } from "@/types";
+import { EVData } from "@/types";
 import React from "react";
 
 const ScatterPlot = ({ data }: { data: EVData[] }) => {
@@ -16,4 +16,4 @@ const ScatterPlot = ({ data }: { data: EVData[] }) => {
   );
 };
 
-export default ScatterPlot;
+export default React.memo(ScatterPlot);
