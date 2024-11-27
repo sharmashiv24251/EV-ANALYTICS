@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EV Analytics Dashboard
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a Next.js-based web application for visualizing and analyzing Electric Vehicle (EV) data using React, Tailwind CSS, and Shad CN UI. The application provides interactive data visualizations including Scatter Plot, Parallel Coordinates, and Heatmap charts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Technologies Used
+
+- **Frontend Framework**: Next.js (React 19)
+- **Styling**: Tailwind CSS
+- **UI Components**: Shad CN UI
+- **Data Visualization**: D3.js (planned)
+- **Language**: TypeScript
+
+## Features
+
+- Dashboard with multiple data visualizations
+- Responsive grid layout
+- Multiple chart types:
+  - Scatter Plot
+  - Parallel Coordinates
+  - Heatmap
+- Data filtering capabilities
+- Performance metrics for Electric Vehicles
+
+## Project Structure
+
+```
+/
+├── app/
+│   ├── page.tsx           # Main dashboard page
+│   └── chart/
+│       └── [type]/
+│           └── page.tsx   # Dynamic chart page
+├── components/
+│   ├── Chart.tsx          # Main chart rendering component
+│   ├── HomeChartCard.tsx  # Chart container component
+│   ├── HomeDataCard.tsx   # Data summary card component
+│   ├── Heatmap.tsx        # Heatmap visualization
+│   ├── ScatterPlot.tsx    # Scatter plot visualization
+│   └── Parallel.tsx       # Parallel coordinates visualization
+├── lib/
+│   └── utils.ts           # Utility functions
+├── data.ts                # Mock EV data
+└── types.ts               # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data Types
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### EVData
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```typescript
+type EVData = {
+  vehicle_id: "EV001" | "EV002" | "EV003" | "EV004" | "EV005";
+  distance_traveled: number;
+  charging_time: number;
+  average_speed: number;
+  region: "North" | "East" | "West" | "South";
+  date: string;
+};
+```
 
-## Learn More
+### Filters
 
-To learn more about Next.js, take a look at the following resources:
+```typescript
+type Filters = {
+  vehicle_id?: "EV001" | "EV002" | "EV003" | "EV004" | "EV005";
+  region?: "North" | "East" | "West" | "South";
+  date?: string;
+};
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup and Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository
+2. Install dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+## Available Scripts
+
+- `dev`: Start development server
+- `build`: Create production build
+- `start`: Start production server
+- `lint`: Run ESLint
+
+## Planned Improvements
+
+- Complete D3.js chart implementations
+- Enhanced data filtering
+- More interactive visualizations
+- Additional performance metrics
+- Error handling and loading states
+
+## Known Limitations
+
+- Current charts are placeholders
+- Limited mock data
+- D3.js integration is incomplete
+
+## Dependencies
+
+Key dependencies include:
+
+- Next.js 15
+- React 19
+- Tailwind CSS
+- Shad CN UI
+- D3.js
+- TypeScript
