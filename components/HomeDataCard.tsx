@@ -6,7 +6,7 @@ const HomeDataCard = ({ title, number }: { title: string; number: number }) => {
   const [value, setValue] = useState(0);
   useEffect(() => {
     setValue(number);
-  }, []);
+  }, [number]);
 
   return (
     <div className="flex flex-col justify-between h-full max-h-[150px]">

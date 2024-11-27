@@ -8,16 +8,26 @@ const Chart = ({ type, filter }: { type: ChartType; filter?: Filters }) => {
   const filteredData = filterData(EV_DATA, filter || {});
 
   if (type === "scatter") {
-    return <ScatterPlot data={filteredData} />;
+    return (
+      <div className="h-[200px] overflow-y-scroll">
+        {/* this div is tempporary */}
+        <ScatterPlot data={filteredData} />
+      </div>
+    );
   } else if (type === "heatmap") {
     return (
-      <div className="scale-[70%] translate-y-[-100px]">
+      <div className="h-[200px] overflow-y-scroll">
         {/* this div is tempporary */}
         <Heatmap data={filteredData} />
       </div>
     );
   } else if (type === "parallel") {
-    return <Parallel data={filteredData} />;
+    return (
+      <div className="h-[200px] overflow-y-scroll">
+        {/* this div is tempporary */}
+        <Parallel data={filteredData} />
+      </div>
+    );
   }
 
   return null;
